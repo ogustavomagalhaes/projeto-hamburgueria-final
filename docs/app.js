@@ -1,4 +1,11 @@
 // Aguarda o conteúdo da página carregar completamente antes de executar o script
+
+// Carrega config do backend
+// (garante que config.js foi incluído antes deste script)
+if (typeof BACKEND_URL === 'undefined') {
+  alert('Erro: config.js não foi carregado. Inclua <script src="js/config.js"></script> antes de app.js');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 
   const form = document.getElementById('form-pedido');
@@ -79,12 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const pedidoFormatado = formatarPedidoParaTrello(pedido);
 
-    // 4. Enviar para o servidor (simulação)
-    // Substitua '/api/pedidos' pela URL real da sua API
-    fetch('/api/pedidos', {
+    // 4. Enviar para o backend hospedado
+    fetch(`${BACKEND_URL}/api/pedidos`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(pedido) // Envia o objeto completo
+      body: JSON.stringify(pedido)
     })
     .then(res => {
       if (!res.ok) {

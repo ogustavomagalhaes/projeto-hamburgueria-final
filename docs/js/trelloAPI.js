@@ -11,7 +11,10 @@
  */
 async function criarCardTrello(titulo, descricao) {
     try {
-        const response = await fetch('/api/trello-card', {
+        if (typeof BACKEND_URL === 'undefined') {
+            throw new Error('config.js não carregado: BACKEND_URL indefinido');
+        }
+        const response = await fetch(`${BACKEND_URL}/api/trello-card`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ titulo, descricao })
