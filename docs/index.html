@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/621ba70d5e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+
+    <title>Noite do Hambúrguer</title>
+  </head>
+  <body>
+    
+    <header>
+        <nav id="navegacao" class="navbar navbar-expand-md navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="">
+                    <img src="imagens/logo.png.png" alt="logo" width="150">
+                </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#menu-principal">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link active font-weight-bold" href="index.html">Cadastrar</a></li>
+                        <li class="nav-item"><a class="nav-link font-weight-bold" href="cozinha.html">Consulta</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="d-flex justify-content-center align-items-center py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-7">
+            <form id="form-pedido" class="mt-3 p-4 border rounded bg-light shadow-sm">
+
+              <h1 class="mb-4 text-center">Noite do Hambúrguer</h1>
+
+              <div class="mb-3">
+                <label for="nome" class="form-label">Seu nome:</label>
+                <input type="text" id="nome" class="form-control" placeholder="De quem irá retirar o pedido" required>
+              </div>
+              <hr>
+
+              <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone para contato:</label>
+                <input type="tel" id="telefone" class="form-control" placeholder="(XX ) XXXXX-XXXXX" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" required>
+              </div>
+              <hr>
+
+              <div class="mb-3">
+                <label for="quantidadeCombos" class="form-label fw-bold">Quantos combos irá pegar?</label>
+                <select id="quantidadeCombos" class="form-control" required>
+                  <option value="" selected disabled>Selecione a quantidade...</option>
+                  <option value="1">1 combo</option>
+                  <option value="2">2 combos</option>
+                  <option value="3">3 combos</option>
+                  <option value="4">4 combos</option>
+                  <option value="5">5 combos</option>
+                </select>
+              </div>
+              <hr>
+
+              <!-- Detalhes dos Combos (Ingredientes) -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">Quais as informações do(s) seu(s) combo(s)?</label>
+                <div class="form-text mb-2">Obs: Marque apenas as opções que irá pegar.</div>
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center align-middle">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Combo</th>
+                        <th>Completo</th>
+                        <th>Sem cebola</th>
+                        <th>Sem tomate</th>
+                        <th>Sem alface</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Linhas de combo1 a combo5 -->
+                      <tr>
+                        <td>Combo 1</td>
+                        <td><input type="checkbox" name="combo1" value="completo"></td>
+                        <td><input type="checkbox" name="combo1" value="sem-cebola"></td>
+                        <td><input type="checkbox" name="combo1" value="sem-tomate"></td>
+                        <td><input type="checkbox" name="combo1" value="sem-alface"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 2</td>
+                        <td><input type="checkbox" name="combo2" value="completo"></td>
+                        <td><input type="checkbox" name="combo2" value="sem-cebola"></td>
+                        <td><input type="checkbox" name="combo2" value="sem-tomate"></td>
+                        <td><input type="checkbox" name="combo2" value="sem-alface"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 3</td>
+                        <td><input type="checkbox" name="combo3" value="completo"></td>
+                        <td><input type="checkbox" name="combo3" value="sem-cebola"></td>
+                        <td><input type="checkbox" name="combo3" value="sem-tomate"></td>
+                        <td><input type="checkbox" name="combo3" value="sem-alface"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 4</td>
+                        <td><input type="checkbox" name="combo4" value="completo"></td>
+                        <td><input type="checkbox" name="combo4" value="sem-cebola"></td>
+                        <td><input type="checkbox" name="combo4" value="sem-tomate"></td>
+                        <td><input type="checkbox" name="combo4" value="sem-alface"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 5</td>
+                        <td><input type="checkbox" name="combo5" value="completo"></td>
+                        <td><input type="checkbox" name="combo5" value="sem-cebola"></td>
+                        <td><input type="checkbox" name="combo5" value="sem-tomate"></td>
+                        <td><input type="checkbox" name="combo5" value="sem-alface"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <hr>
+
+              <!-- Estado da Carne -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">Qual o estado do(s) seu(s) hambúrguer(es)?</label>
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center align-middle">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Combo</th>
+                        <th>Mal passado</th>
+                        <th>Ao ponto</th>
+                        <th>Bem passado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Linhas de estadoCombo1 a estadoCombo5 -->
+                      <tr>
+                        <td>Combo 1</td>
+                        <td><input type="radio" name="estadoCombo1" value="mal-passado"></td>
+                        <td><input type="radio" name="estadoCombo1" value="ao-ponto"></td>
+                        <td><input type="radio" name="estadoCombo1" value="bem-passado"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 2</td>
+                        <td><input type="radio" name="estadoCombo2" value="mal-passado"></td>
+                        <td><input type="radio" name="estadoCombo2" value="ao-ponto"></td>
+                        <td><input type="radio" name="estadoCombo2" value="bem-passado"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 3</td>
+                        <td><input type="radio" name="estadoCombo3" value="mal-passado"></td>
+                        <td><input type="radio" name="estadoCombo3" value="ao-ponto"></td>
+                        <td><input type="radio" name="estadoCombo3" value="bem-passado"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 4</td>
+                        <td><input type="radio" name="estadoCombo4" value="mal-passado"></td>
+                        <td><input type="radio" name="estadoCombo4" value="ao-ponto"></td>
+                        <td><input type="radio" name="estadoCombo4" value="bem-passado"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 5</td>
+                        <td><input type="radio" name="estadoCombo5" value="mal-passado"></td>
+                        <td><input type="radio" name="estadoCombo5" value="ao-ponto"></td>
+                        <td><input type="radio" name="estadoCombo5" value="bem-passado"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <hr>
+
+              <!-- Refrigerantes -->
+              <div class="mb-3">
+                <label class="form-label fw-bold">Quais refrigerantes irá pegar?</label>
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center align-middle">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Combo</th>
+                        <th>Coca-Cola</th>
+                        <th>Coca-Cola Zero</th>
+                        <th>Guaraná</th>
+                        <th>Guaraná Zero</th>
+                        <th>Água com gás</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Linhas de refCombo1 a refCombo5 -->
+                      <tr>
+                        <td>Combo 1</td>
+                        <td><input type="radio" name="refCombo1" value="coca-cola"></td>
+                        <td><input type="radio" name="refCombo1" value="coca-cola-zero"></td>
+                        <td><input type="radio" name="refCombo1" value="guarana"></td>
+                        <td><input type="radio" name="refCombo1" value="guarana-zero"></td>
+                        <td><input type="radio" name="refCombo1" value="agua-gas"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 2</td>
+                        <td><input type="radio" name="refCombo2" value="coca-cola"></td>
+                        <td><input type="radio" name="refCombo2" value="coca-cola-zero"></td>
+                        <td><input type="radio" name="refCombo2" value="guarana"></td>
+                        <td><input type="radio" name="refCombo2" value="guarana-zero"></td>
+                        <td><input type="radio" name="refCombo2" value="agua-gas"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 3</td>
+                        <td><input type="radio" name="refCombo3" value="coca-cola"></td>
+                        <td><input type="radio" name="refCombo3" value="coca-cola-zero"></td>
+                        <td><input type="radio" name="refCombo3" value="guarana"></td>
+                        <td><input type="radio" name="refCombo3" value="guarana-zero"></td>
+                        <td><input type="radio" name="refCombo3" value="agua-gas"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 4</td>
+                        <td><input type="radio" name="refCombo4" value="coca-cola"></td>
+                        <td><input type="radio" name="refCombo4" value="coca-cola-zero"></td>
+                        <td><input type="radio" name="refCombo4" value="guarana"></td>
+                        <td><input type="radio" name="refCombo4" value="guarana-zero"></td>
+                        <td><input type="radio" name="refCombo4" value="agua-gas"></td>
+                      </tr>
+                      <tr>
+                        <td>Combo 5</td>
+                        <td><input type="radio" name="refCombo5" value="coca-cola"></td>
+                        <td><input type="radio" name="refCombo5" value="coca-cola-zero"></td>
+                        <td><input type="radio" name="refCombo5" value="guarana"></td>
+                        <td><input type="radio" name="refCombo5" value="guarana-zero"></td>
+                        <td><input type="radio" name="refCombo5" value="agua-gas"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <hr>
+
+              <div class="mb-3">
+                  <label for="info_extra" class="form-label">Alguma informação a mais em seu(s) combo(s)?</label>
+                  <input type="text" id="info_extra" class="form-control" placeholder="Ex: Tirar picles do combo 2">
+              </div>
+              <hr>
+
+              <div class="mb-3">
+                <label for="local" class="form-label">Pedido será para levar ou comer no local?</label>
+                <select name="local" id="local" class="form-control" required>
+                  <option value="" selected disabled>Selecione uma opção</option>
+                  <option value="levar">Levar</option>
+                  <option value="comer_local">Comer no local</option>
+                </select>
+              </div>
+              <hr>
+
+              <div>
+                <label for="pagamento" class="form-label">Tipo de pagamento</label>
+                <select name="pagamento" id="pagamento" class="form-control" required>
+                  <option value="" selected disabled>Selecione uma opção</option>
+                  <option value="pix">Pix</option>
+                  <option value="debito">Cartão de débito</option>
+                  <option value="credito">Cartão de crédito</option>
+                  <option value="dinheiro">Dinheiro</option>
+                </select>
+              </div>
+              <hr>
+
+              <div class="container my-3">
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg w-100">Enviar</button>
+                </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <!-- API do Trello -->
+    <script src="js/trelloAPI.js"></script>
+    
+    <!-- SEU SCRIPT CUSTOMIZADO VEM AQUI -->
+    <script src="app.js"></script>
+  </body>
+</html>
